@@ -257,7 +257,7 @@ class MODS {
     foreach($ndltd_dom->getElementsByTagName('name') as $node) {
         $new_mods->mods["Degree"][] = $node->nodeValue;}
     foreach($ndltd_dom->getElementsByTagName('level') as $node) {
-        $new_mods->mods["Level"][] = ucwords($node->nodeValue);}
+        $new_mods->mods["Level"][] = $node->nodeValue;}
   
 
     $custom_dom = new DomDocument();
