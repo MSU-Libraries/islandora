@@ -30,7 +30,8 @@ class MODS {
     'Topic' => array(),
     'Keywords' => array(),
     'Access' => array(),
-    'Abstract' => array()
+    'Abstract' => array(),
+    'third_party_search' => "",
   );
    public $owner;
 
@@ -271,7 +272,9 @@ class MODS {
     foreach($custom_dom->getElementsByTagName('keyword') as $node) {
         $new_mods->mods["Keywords"][] = $node->nodeValue;
     }
-
+    foreach($custom_dom->getElementsByTagName('third_party_search') as $node) {
+	$new_mods->mods["third_party_search"] = $node->nodeValue;
+    }    
     
     return $new_mods;
 }
