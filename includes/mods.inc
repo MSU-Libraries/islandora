@@ -227,7 +227,7 @@ class MODS {
     $subject_subheadings = array("mods:topic", "mods:geographic", "mods:temporal","mods:hierarchicalGeographic","mods:cartographics","mods:occupation","mods:genre", "mods:name", "mods:titleInfo");    
     foreach($mods_dom->getElementsByTagName('subject') as $node) {
         
-        if ($node->getAttribute("authority") !== "umi") {
+        if ($node->getAttribute("authority") === "lcsh" || $node->getAttribute("authority") === "mesh") {
             $full_subject = array();
             foreach($node->childNodes as $subject_part) {
 		if (in_array($subject_part->nodeName, $subject_subheadings)) {
