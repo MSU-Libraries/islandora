@@ -270,7 +270,9 @@ class MODS {
         $new_mods->mods["Topic"][] = rtrim(ltrim($node->nodeValue));
     } 
     foreach($custom_dom->getElementsByTagName('keyword') as $node) {
+        if ($node->nodeValue !== "") {
         $new_mods->mods["Keywords"][] = $node->nodeValue;
+        }
     }
     foreach($custom_dom->getElementsByTagName('third_party_search') as $node) {
 	$new_mods->mods["third_party_search"] = $node->nodeValue;
