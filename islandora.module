@@ -996,6 +996,7 @@ function islandora_view_object(AbstractObject $object) {
   module_load_include('inc', 'islandora', 'includes/breadcrumb');
   module_load_include('inc', 'islandora', 'includes/utilities');
 
+/*
   // Add the print button via JavaScript.
   $path = drupal_get_path('module', 'islandora');
   drupal_add_js(array(
@@ -1006,7 +1007,7 @@ function islandora_view_object(AbstractObject $object) {
 
   drupal_add_js(array('islandora' => array('print_link' => 'islandora/object/' . $object->id . '/print_object')), array('type' => 'setting'));
   drupal_add_js($path . '/js/add_print.js');
-
+*/
   drupal_set_title($object->label);
   drupal_set_breadcrumb(islandora_get_breadcrumbs($object));
 
